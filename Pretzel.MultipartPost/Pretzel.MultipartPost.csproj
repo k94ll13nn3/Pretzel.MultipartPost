@@ -89,6 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MultipartPostTagFactory.cs" />
+    <Compile Include="IsMutltipartPostBlock.cs" />
+    <Compile Include="IsMutltipartPostBlockFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MultipartPostTag.cs" />
   </ItemGroup>

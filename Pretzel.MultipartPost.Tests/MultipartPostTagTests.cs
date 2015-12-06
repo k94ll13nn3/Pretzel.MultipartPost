@@ -5,6 +5,7 @@ using System;
 namespace Pretzel.MultipartPost.Tests
 {
     [TestFixture]
+    // Not working because of the custom DotLiquid.dll
     public class MultipartPostTagTests
     {
         [Test]
