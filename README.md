@@ -49,4 +49,4 @@ The tag will have no effect for `post2` and `post3` and in `post1.1` and `post2.
 ```
 ### Installation
 
-Compile the solution `Pretzel.MultipartPost.sln` and copy `Pretzel.MultipartPost.dll` to the `_plugins` folder at the root of your site folder (VS2015 needed).
+Download the latest [release](https://github.com/k94ll13nn3/Pretzel.MultipartPost/releases) copy `Pretzel.MultipartPost.dll` to the `_plugins` folder at the root of your site folder.
