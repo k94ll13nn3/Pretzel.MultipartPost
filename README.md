@@ -1,19 +1,28 @@
 # Pretzel.MultipartPost
 
-This plugin aims at creating a list of all posts that are parts of the same series in HTML. 
+This plugin aims at creating a list of all posts that are parts of the same series in HTML.
 
 Posts that are in the same series are posts that are in a subfolder of the `_posts` folder.
-
 
 ### Usage
 
 The tag has the following syntax:
 
 ```
-{% multipart_post [asc|desc] %}
+{% multipart_post [asc|desc|wasc|wdesc] %}
 ```
 
-`asc` and `desc` represents the order in which the posts are displayed (ascending and descending), `asc` is the default value when no order is specified.
+`asc` and `desc` represents the order in which the posts are displayed (ascending and descending), `asc` is the default value when no order is specified. If prefixed by `w`, it means that the current post will not be included in the list.
+
+This plugin also provide a block that only render its content when used in a multipart post :
+
+```
+{% is_multipart_post %}
+...
+{% endis_multipart_post %}
+```
+
+This can be used in addition to `multipart_post` to display a title or some text before the list.
 
 ### Example
 

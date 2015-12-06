@@ -9,12 +9,12 @@ using Pretzel.Logic.Templating.Context;
 namespace Pretzel.MultipartPost
 {
     // TODO: Permettre l'inclusion ou non du post courant (en gras ?)
-    // TODO: Considérer les articles finissant en -part*
     // TODO: Add a base CSS class ?
     public class MultipartPostTag : DotLiquid.Tag, ITag
     {
         private readonly SiteContext siteContext;
         private bool reverseOrder;
+        private bool includeCurrent = true;
 
         public MultipartPostTag(SiteContext siteContext)
         {
@@ -25,14 +25,24 @@ namespace Pretzel.MultipartPost
 
         public override void Initialize(string tagName, string markup, List<string> tokens)
         {
-            if (!(string.IsNullOrWhiteSpace(markup) || markup.Trim() == "asc" || markup.Trim() == "desc"))
+            var trimedMarkup = markup.Trim();
+            if (!(string.IsNullOrWhiteSpace(markup) || trimedMarkup == "asc" || trimedMarkup == "desc" || trimedMarkup == "wasc" || trimedMarkup == "wdesc"))
             {
-                throw new ArgumentException("Expected syntax: {% multipart_post [asc|desc] %}");
+                throw new ArgumentException("Expected syntax: {% multipart_post [asc|desc|wasc|wdesc] %}");
             }
 
-            if (markup.Trim() == "desc")
+            if (trimedMarkup == "desc")
             {
                 this.reverseOrder = true;
+            }
+            else if (trimedMarkup == "wasc")
+            {
+                this.includeCurrent = false;
+            }
+            else if (trimedMarkup == "wdesc")
+            {
+                this.reverseOrder = true;
+                this.includeCurrent = false;
             }
 
             base.Initialize(tagName, markup, tokens);
@@ -55,7 +65,10 @@ namespace Pretzel.MultipartPost
 
                 foreach (var page in posts)
                 {
-                    result.Write($"<li><a href=\"{page.Url}\">{page.Title}</a></li>");
+                    if (page.Id != currentPost.Id || this.includeCurrent)
+                    {
+                        result.Write($"<li><a href=\"{page.Url}\">{page.Title}</a></li>");
+                    }
                 }
 
                 result.Write("</ul>");
