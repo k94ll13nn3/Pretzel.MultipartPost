@@ -1,9 +1,10 @@
+// Pretzel.MultipartPost plugin
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using DotLiquid;
 using Pretzel.Logic.Extensibility;
-using System.Collections.Generic;
 using Pretzel.Logic.Templating.Context;
-using System.Linq;
-using System.IO;
 
 namespace Pretzel.MultipartPost
 {
@@ -23,7 +24,7 @@ namespace Pretzel.MultipartPost
             base.Initialize(tagName, markup, tokens);
         }
 
-        public override void Render(Context context, System.IO.TextWriter result)
+        public override void Render(Context context, TextWriter result)
         {
             if (this.siteContext == null)
             {

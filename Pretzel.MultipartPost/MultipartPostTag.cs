@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Pretzel.MultipartPost plugin
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Pretzel.MultipartPost
 {
     // TODO: Permettre l'inclusion ou non du post courant (en gras ?)
     // TODO: Add a base CSS class ?
+    // TODO: Prev & Next post tag (for post series).
     public class MultipartPostTag : DotLiquid.Tag, ITag
     {
         private readonly SiteContext siteContext;
@@ -31,18 +33,20 @@ namespace Pretzel.MultipartPost
                 throw new ArgumentException("Expected syntax: {% multipart_post [asc|desc|wasc|wdesc] %}");
             }
 
-            if (trimedMarkup == "desc")
+            switch (trimedMarkup)
             {
-                this.reverseOrder = true;
-            }
-            else if (trimedMarkup == "wasc")
-            {
-                this.includeCurrent = false;
-            }
-            else if (trimedMarkup == "wdesc")
-            {
-                this.reverseOrder = true;
-                this.includeCurrent = false;
+                case "desc":
+                    this.reverseOrder = true;
+                    break;
+
+                case "wasc":
+                    this.includeCurrent = false;
+                    break;
+
+                case "wdesc":
+                    this.reverseOrder = true;
+                    this.includeCurrent = false;
+                    break;
             }
 
             base.Initialize(tagName, markup, tokens);

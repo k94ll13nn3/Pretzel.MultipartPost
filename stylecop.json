@@ -7,7 +7,9 @@
       "documentInternalElements": true,
       "documentPrivateElements": true,
       "documentPrivateFields": true,
-      "fileNamingConvention": "metadata"
+      "fileNamingConvention": "metadata",
+      "xmlHeader": false,
+      "copyrightText": "Pretzel.MultipartPost plugin"
     },
     "namingRules": {
       "allowCommonHungarianPrefixes": false
