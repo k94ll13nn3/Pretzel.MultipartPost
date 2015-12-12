@@ -9,8 +9,6 @@ using Pretzel.Logic.Templating.Context;
 
 namespace Pretzel.MultipartPost
 {
-    // TODO: Permettre l'inclusion ou non du post courant (en gras ?)
-    // TODO: Add a base CSS class ?
     // TODO: Prev & Next post tag (for post series).
     public class MultipartPostTag : DotLiquid.Tag, ITag
     {
@@ -65,13 +63,18 @@ namespace Pretzel.MultipartPost
             {
                 var posts = this.reverseOrder ? currentPost.DirectoryPages.OrderByDescending(p => p.Id) : currentPost.DirectoryPages.OrderBy(p => p.Id);
 
-                result.Write("<ul>");
+                result.Write("<ul class=\"multipart-post-list\">");
 
                 foreach (var page in posts)
                 {
-                    if (page.Id != currentPost.Id || this.includeCurrent)
+                    if (page.Id != currentPost.Id)
                     {
                         result.Write($"<li><a href=\"{page.Url}\">{page.Title}</a></li>");
+                    }
+                    else if (page.Id == currentPost.Id && this.includeCurrent)
+                    {
+
+                        result.Write($"<li><a class=\"current-post\" href=\"{page.Url}\">{page.Title}</a></li>");
                     }
                 }
 

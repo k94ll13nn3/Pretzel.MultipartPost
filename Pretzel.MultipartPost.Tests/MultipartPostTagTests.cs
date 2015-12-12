@@ -51,13 +51,13 @@ namespace Pretzel.MultipartPost.Tests
 
                 liquidContext["page"] = new Hash { new KeyValuePair<string, object>("id", "1") };
                 m.Render(liquidContext, t);
-                Assert.AreEqual("<ul><li><a href=\"/posts/series/1\">Post series 1</a></li><li><a href=\"/posts/series/2\">Post series 2</a></li></ul>", t.ToString());
+                Assert.AreEqual("<ul class=\"multipart-post-list\"><li><a class=\"current-post\" href=\"/posts/series/1\">Post series 1</a></li><li><a href=\"/posts/series/2\">Post series 2</a></li></ul>", t.ToString());
                 sb = t.GetStringBuilder();
                 sb.Remove(0, sb.Length);
 
                 liquidContext["page"] = new Hash { new KeyValuePair<string, object>("id", "2") };
                 m.Render(liquidContext, t);
-                Assert.AreEqual("<ul><li><a href=\"/posts/series/1\">Post series 1</a></li><li><a href=\"/posts/series/2\">Post series 2</a></li></ul>", t.ToString());
+                Assert.AreEqual("<ul class=\"multipart-post-list\"><li><a href=\"/posts/series/1\">Post series 1</a></li><li><a class=\"current-post\" href=\"/posts/series/2\">Post series 2</a></li></ul>", t.ToString());
             }
         }
 

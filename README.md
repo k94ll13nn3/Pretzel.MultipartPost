@@ -38,11 +38,11 @@ _posts
 
 ```
 
-The tag will have no effect for `post2` and `post3` and in `post1.1` and `post2.2`, it will render the following HTML :
+The tag will have no effect for `post2` and `post3` and in `post1.1` and `post1.2`, it will render the following HTML (here is the example for `post1.1`, for `post1.2` the `current-post` class is on the second line):
 
 ```
-<ul>
-    <li><a href="url">post1.1</a></li>
+<ul class="multipart-post-list">
+    <li><a class="current-post" href="url">post1.1</a></li>
     <li><a href="url">post2.2</a></li>
 </ul>
 
