@@ -73,7 +73,6 @@ namespace Pretzel.MultipartPost
                     }
                     else if (page.Id == currentPost.Id && this.includeCurrent)
                     {
-
                         result.Write($"<li><a class=\"current-post\" href=\"{page.Url}\">{page.Title}</a></li>");
                     }
                 }

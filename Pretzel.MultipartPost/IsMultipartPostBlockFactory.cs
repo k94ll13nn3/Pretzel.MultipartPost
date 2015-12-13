@@ -3,16 +3,16 @@ using Pretzel.Logic.Extensibility;
 
 namespace Pretzel.MultipartPost
 {
-    public class IsMutltipartPostBlockFactory : TagFactoryBase
+    public class IsMultipartPostBlockFactory : TagFactoryBase
     {
-        public IsMutltipartPostBlockFactory()
+        public IsMultipartPostBlockFactory()
         : base("IsMultipartPost")
         {
         }
 
         public override ITag CreateTag()
         {
-            return new IsMutltipartPostBlock(this.SiteContext);
+            return new IsMultipartPostBlock(this.SiteContext);
         }
     }
 }

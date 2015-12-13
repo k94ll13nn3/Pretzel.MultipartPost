@@ -1,5 +1,4 @@
 // Pretzel.MultipartPost plugin
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DotLiquid;
@@ -8,21 +7,16 @@ using Pretzel.Logic.Templating.Context;
 
 namespace Pretzel.MultipartPost
 {
-    internal class IsMutltipartPostBlock : Block, ITag
+    public class IsMultipartPostBlock : Block, ITag
     {
         private readonly SiteContext siteContext;
 
-        public IsMutltipartPostBlock(SiteContext siteContext)
+        public IsMultipartPostBlock(SiteContext siteContext)
         {
             this.siteContext = siteContext;
         }
 
         public new string Name => "IsMultipartPost";
-
-        public override void Initialize(string tagName, string markup, List<string> tokens)
-        {
-            base.Initialize(tagName, markup, tokens);
-        }
 
         public override void Render(Context context, TextWriter result)
         {
