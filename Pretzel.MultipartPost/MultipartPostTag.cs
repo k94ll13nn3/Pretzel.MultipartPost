@@ -14,7 +14,7 @@ namespace Pretzel.MultipartPost
     {
         private readonly SiteContext siteContext;
         private bool reverseOrder;
-        private bool includeCurrent = true;
+        private bool includeCurrent;
 
         public MultipartPostTag(SiteContext siteContext)
         {
@@ -35,15 +35,22 @@ namespace Pretzel.MultipartPost
             {
                 case "desc":
                     this.reverseOrder = true;
+                    this.includeCurrent = true;
                     break;
 
                 case "wasc":
+                    this.reverseOrder = false;
                     this.includeCurrent = false;
                     break;
 
                 case "wdesc":
                     this.reverseOrder = true;
                     this.includeCurrent = false;
+                    break;
+
+                default:
+                    this.reverseOrder = false;
+                    this.includeCurrent = true;
                     break;
             }
 
@@ -52,11 +59,6 @@ namespace Pretzel.MultipartPost
 
         public override void Render(Context context, TextWriter result)
         {
-            if (this.siteContext == null)
-            {
-                return;
-            }
-
             var currentPost = this.siteContext.Posts.FirstOrDefault(p => p.Id == context["page.id"].ToString());
 
             if (currentPost != null && new FileInfo(currentPost.File).Directory.Name != "_posts" && currentPost.DirectoryPages.Count() > 1)

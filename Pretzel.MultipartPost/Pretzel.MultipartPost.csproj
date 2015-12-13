@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultipartPostLinkTag.cs" />
+    <Compile Include="MultipartPostLinkTagFactory.cs" />
     <Compile Include="MultipartPostTagFactory.cs" />
     <Compile Include="IsMultipartPostBlock.cs" />
     <Compile Include="IsMultipartPostBlockFactory.cs" />

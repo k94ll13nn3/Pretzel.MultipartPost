@@ -24,6 +24,11 @@ This plugin also provide a block that only render its content when used in a mul
 
 This can be used in addition to `multipart_post` to display a title or some text before the list.
 
+Finally, the `multipart_post_link` tag can be used to refer to the previous or next post in the series from another post. It has the following syntax:
+```
+{% multipart_post_link [prev|next] %}
+```
+
 ### Example
 
 For the following file tree :
@@ -47,6 +52,7 @@ The tag will have no effect for `post2` and `post3` and in `post1.1` and `post1.
 </ul>
 
 ```
+
 ### Installation
 
 Download the latest [release](https://github.com/k94ll13nn3/Pretzel.MultipartPost/releases) and copy `Pretzel.MultipartPost.dll` to the `_plugins` folder at the root of your site folder.
