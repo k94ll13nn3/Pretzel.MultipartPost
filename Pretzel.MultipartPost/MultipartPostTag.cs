@@ -9,7 +9,6 @@ using Pretzel.Logic.Templating.Context;
 
 namespace Pretzel.MultipartPost
 {
-    // TODO: Prev & Next post tag (for post series).
     public class MultipartPostTag : DotLiquid.Tag, ITag
     {
         private readonly SiteContext siteContext;
