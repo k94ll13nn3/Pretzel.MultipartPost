@@ -1,5 +1,7 @@
 # Pretzel.MultipartPost
 
+[![Build status](https://ci.appveyor.com/api/projects/status/45og7v5fqd795d0b?svg=true)](https://ci.appveyor.com/project/k94ll13nn3/pretzel-multipartpost)
+
 This plugin aims at creating a list of all posts that are parts of the same series in HTML.
 
 Posts that are in the same series are posts that are in a subfolder of the `_posts` folder.
