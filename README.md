@@ -1,8 +1,8 @@
 # Pretzel.MultipartPost
 
 [![Build status](https://ci.appveyor.com/api/projects/status/45og7v5fqd795d0b?svg=true)](https://ci.appveyor.com/project/k94ll13nn3/pretzel-multipartpost) 
-[![Release](https://img.shields.io/github/release/k94ll13nn3/Pretzel.MultipartPost.svg)](https://img.shields.io/github/release/k94ll13nn3/Pretzel.MultipartPost.svg)
-
+[![Release](https://img.shields.io/github/release/k94ll13nn3/Pretzel.MultipartPost.svg)](https://github.com/k94ll13nn3/Pretzel.MultipartPost/releases/latest)
+ 
 This plugin aims at creating a list of all posts that are parts of the same series in HTML.
 
 Posts that are in the same series are posts that are in a subfolder of the `_posts` folder.
@@ -58,5 +58,5 @@ The tag will have no effect for `post2` and `post3` and in `post1.1` and `post1.
 
 ### Installation
 
-Download the latest [release](https://github.com/k94ll13nn3/Pretzel.MultipartPost/releases) and copy `Pretzel.MultipartPost.dll` to the `_plugins` folder at the root of your site folder (you may have to **unblock** the file).
+Download the [latest release](https://github.com/k94ll13nn3/Pretzel.MultipartPost/releases/latest) and copy `Pretzel.MultipartPost.dll` to the `_plugins` folder at the root of your site folder (you may have to **unblock** the file).
 
