@@ -1,4 +1,4 @@
-version: '1.1.1-{build}'
+version: '1.1.1.{build}'
 
 pull_requests:
   do_not_increment_build_number: true
@@ -10,9 +10,9 @@ skip_tags: true
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
-  assembly_version: '1.1.1'
-  assembly_file_version: '1.1.1'
-  assembly_informational_version: '{version}'
+  assembly_version: '1.0.0'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '1.1.1'
 
 before_build:
 - cmd: nuget restore
